@@ -3,6 +3,7 @@ use std::io;
 fn main() {
 
     let choice = get_choice();
+    //TODO: Have the choice returned as an enum to improve consistency and reuseability
     match choice{
         1=>{celsius_2_fahrenheit();}
         2=>{fahrenheit_2_celsius();}
@@ -17,7 +18,9 @@ fn get_choice()->u8{
     println!("Temperature Convertor");
     println!("1. Celsius to Fahrenheit");
     println!("2. Fahrenheit to Celsius");
-    println!("\nEnter your choice (1 or 2) : ");
+    println!("0. Exit")
+    println!("\nEnter your choice (1,2, or 0) : ");
+
     io::stdin()
         .read_line(&mut choice)
         .expect("Choice not read");
