@@ -2,14 +2,16 @@ use std::io;
 
 fn main() {
 
-    let choice = get_choice();
     //TODO: Have the choice returned as an enum to improve consistency and reuseability
-    match choice{
-        1=>{celsius_2_fahrenheit();}
-        2=>{fahrenheit_2_celsius();}
-        0=>{println!("Exiting the programme.")}
-        _=>{println!("\nChoice out of bound! \nOnly enter a choice from the menu above");
-        }
+    loop{
+        let choice = get_choice();
+        match choice{
+            1=>celsius_2_fahrenheit(),
+            2=>fahrenheit_2_celsius(),
+            0=>{println!("Exiting the programme.");
+        break;},
+        _=>println!("\nChoice out of bound! \nOnly enter a choice from the menu above"),
+    }
     }
 }
 fn get_choice()->u8{
