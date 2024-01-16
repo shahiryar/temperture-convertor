@@ -18,7 +18,7 @@ fn get_choice()->u8{
     println!("Temperature Convertor");
     println!("1. Celsius to Fahrenheit");
     println!("2. Fahrenheit to Celsius");
-    println!("0. Exit")
+    println!("0. Exit");
     println!("\nEnter your choice (1,2, or 0) : ");
 
     io::stdin()
