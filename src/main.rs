@@ -2,6 +2,16 @@ use std::io;
 
 fn main() {
 
+    let choice = get_choice();
+    if choice == 1{
+    celsius_2_fahrenheit();
+    }else if choice == 2{
+    fahrenheit_2_celsius();
+    }
+
+}
+fn get_choice()->u8{
+    
     let mut choice = String::new();
     println!("Temperature Convertor");
     println!("1. Celsius to Fahrenheit");
@@ -11,14 +21,9 @@ fn main() {
         .read_line(&mut choice)
         .expect("Choice not read");
     let choice:u8 = choice.trim().parse().expect("Choice Number could not be parsed from the input");
-    
-    if choice == 1{
-    celsius_2_fahrenheit();
-    }else if choice == 2{
-    fahrenheit_2_celsius();
-    }
-
+    return choice;
 }
+
 fn celsius_2_fahrenheit(){
     let mut temp_cel = String::new();
     println!("\nEnter Temperature in Celsius : ");
