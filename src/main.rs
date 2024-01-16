@@ -3,12 +3,13 @@ use std::io;
 fn main() {
 
     let choice = get_choice();
-    if choice == 1{
-    celsius_2_fahrenheit();
-    }else if choice == 2{
-    fahrenheit_2_celsius();
+    match choice{
+        1=>{celsius_2_fahrenheit();}
+        2=>{fahrenheit_2_celsius();}
+        0=>{println!("Exiting the programme.")}
+        _=>{println!("\nChoice out of bound! \nOnly enter a choice from the menu above");
+        }
     }
-
 }
 fn get_choice()->u8{
     
