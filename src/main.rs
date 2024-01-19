@@ -14,15 +14,19 @@ fn main() {
     }
     }
 }
-fn get_choice()->u8{
-    
-    let mut choice = String::new();
+
+fn show_choice(){
     println!("Temperature Convertor");
     println!("1. Celsius to Fahrenheit");
     println!("2. Fahrenheit to Celsius");
     println!("0. Exit");
     println!("\nEnter your choice (1,2, or 0) : ");
+}
 
+fn get_choice()->u8{
+    
+    let mut choice = String::new();
+    show_choice();
     io::stdin()
         .read_line(&mut choice)
         .expect("Choice not read");
